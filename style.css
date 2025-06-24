@@ -1,11 +1,11 @@
-/* ===== BASE STYLES ===== */
 :root {
-    --primary: #0929ab; /* Your brand color */
+    --primary: #0929ab;
     --secondary: #0d3be6;
     --accent: #ff6b00;
     --light: #f0f4ff;
     --dark: #041a6b;
-    --gray: #95a5a6;
+    --success: #27ae60;
+    --error: #e74c3c;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
     padding: 0 15px;
 }
 
-/* ===== HEADER ===== */
+/* Header Styles */
 header {
     background: linear-gradient(135deg, var(--primary), var(--dark));
     color: white;
@@ -53,26 +53,20 @@ header::before {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    position: relative;
-    z-index: 1;
 }
 
 header h2 {
     font-size: 2rem;
     margin-bottom: 15px;
     font-weight: 600;
-    position: relative;
-    z-index: 1;
 }
 
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
-    position: relative;
-    z-index: 1;
 }
 
-/* ===== COURSE HIGHLIGHTS ===== */
+/* Course Highlights */
 .course-highlights {
     display: flex;
     justify-content: center;
@@ -111,7 +105,7 @@ header h2 {
     color: var(--dark);
 }
 
-/* ===== BENEFITS ===== */
+/* Benefits Section */
 .benefits {
     background-color: #f0f4ff;
     border-radius: 10px;
@@ -154,7 +148,7 @@ header h2 {
     justify-content: center;
 }
 
-/* ===== SIGNUP FORM ===== */
+/* Signup Form */
 .signup {
     background: white;
     border-radius: 10px;
@@ -173,7 +167,7 @@ header h2 {
 
 .limited {
     text-align: center;
-    color: #e74c3c;
+    color: var(--error);
     font-weight: 600;
     margin-bottom: 30px;
     font-size: 1.1rem;
@@ -223,7 +217,6 @@ input:focus {
     transition: all 0.3s;
     margin-top: 10px;
     position: relative;
-    overflow: hidden;
 }
 
 .btn:hover {
@@ -236,7 +229,7 @@ input:focus {
     transform: translateY(0);
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 footer {
     background: linear-gradient(135deg, var(--dark), var(--primary));
     color: white;
@@ -287,7 +280,7 @@ footer h4 {
     opacity: 0.7;
 }
 
-/* ===== MODAL ===== */
+/* Modal Styles */
 .confirmation-modal {
     display: none;
     position: fixed;
@@ -318,7 +311,7 @@ footer h4 {
     right: 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--gray);
+    color: #95a5a6;
     transition: all 0.3s;
 }
 
@@ -328,11 +321,11 @@ footer h4 {
 
 .success-icon {
     font-size: 4rem;
-    color: var(--accent);
+    color: var(--success);
     margin-bottom: 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive Design */
 @media (max-width: 768px) {
     .course-highlights {
         flex-direction: column;
@@ -356,7 +349,7 @@ footer h4 {
     }
 }
 
-/* ===== DECORATIVE ELEMENTS ===== */
+/* Animations */
 .floating {
     animation: floating 3s ease-in-out infinite;
 }
@@ -365,11 +358,4 @@ footer h4 {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
-}
-
-.bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 0;
 }
