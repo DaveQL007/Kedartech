@@ -3,26 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('confirmation');
     const closeBtn = document.querySelector('.close-btn');
     
-    // Create floating bubbles
-    function createBubbles() {
-        const header = document.querySelector('header');
-        for (let i = 0; i < 8; i++) {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
-            const size = Math.random() * 60 + 20;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.top = `${Math.random() * 100}%`;
-            bubble.style.left = `${Math.random() * 100}%`;
-            bubble.style.animationDuration = `${Math.random() * 5 + 5}s`;
-            header.appendChild(bubble);
-        }
-    }
-    
-    createBubbles();
-    
     // Form submission handler
     form.addEventListener('submit', function(e) {
+        // Prevent default only for demo - in production, Formspree will handle
         e.preventDefault();
         
         // Get form values
@@ -45,11 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show confirmation modal
         modal.style.display = 'flex';
         
+        // In production, the form would submit to Formspree
+        console.log('Form would submit to Formspree with data:', {
+            name: fullName,
+            email: email,
+            whatsapp: whatsapp
+        });
+        
         // Reset form
         form.reset();
-        
-        // Log submission (in a real scenario, you would send to Formspree)
-        console.log('Form submitted:', { fullName, email, whatsapp });
     });
     
     // Close modal
