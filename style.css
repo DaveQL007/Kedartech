@@ -6,6 +6,7 @@
     --dark: #041a6b;
     --success: #27ae60;
     --error: #e74c3c;
+    --warning: #f39c12;
 }
 
 * {
@@ -18,7 +19,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -34,9 +38,9 @@ header {
     color: white;
     text-align: center;
     padding: 40px 0;
-    margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header::before {
@@ -53,6 +57,7 @@ header::before {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 header h2 {
@@ -64,6 +69,14 @@ header h2 {
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 30px 0;
 }
 
 /* Course Highlights */
@@ -86,6 +99,18 @@ header h2 {
     max-width: 300px;
     transition: all 0.3s ease;
     border: 1px solid rgba(9, 41, 171, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
 .highlight-card:hover {
@@ -112,6 +137,7 @@ header h2 {
     padding: 30px;
     margin-bottom: 40px;
     border-left: 4px solid var(--accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .benefits h3 {
@@ -156,6 +182,8 @@ header h2 {
     box-shadow: 0 5px 20px rgba(9, 41, 171, 0.1);
     margin-bottom: 40px;
     border: 1px solid rgba(9, 41, 171, 0.1);
+    max-width: 600px;
+    margin: 0 auto 40px;
 }
 
 .signup h3 {
@@ -175,6 +203,7 @@ header h2 {
 
 .form-group {
     margin-bottom: 25px;
+    position: relative;
 }
 
 .form-group label {
@@ -203,6 +232,13 @@ input:focus {
     box-shadow: 0 0 0 3px rgba(9, 41, 171, 0.2);
 }
 
+.error-message {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
 .btn {
     display: block;
     width: 100%;
@@ -217,6 +253,7 @@ input:focus {
     transition: all 0.3s;
     margin-top: 10px;
     position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
@@ -229,12 +266,29 @@ input:focus {
     transform: translateY(0);
 }
 
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: loading 1.5s infinite linear;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--dark), var(--primary));
     color: white;
     padding: 40px 0 20px;
     text-align: center;
+    margin-top: auto;
 }
 
 footer h4 {
@@ -303,6 +357,12 @@ footer h4 {
     width: 90%;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .close-btn {
@@ -347,6 +407,10 @@ footer h4 {
     .benefits li {
         font-size: 1rem;
     }
+    
+    .signup {
+        padding: 30px 20px;
+    }
 }
 
 /* Animations */
@@ -358,4 +422,102 @@ footer h4 {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+}
+
+.form-status {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+.form-status.success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.form-status.error {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.form-status.warning {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+/* Dashboard button */
+.dashboard-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dashboard-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Bubble styles */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+}
+
+/* Registration dashboard styles */
+.registrations-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+.registrations-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.registration-item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reg-number {
+    min-width: 30px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.reg-details {
+    flex: 1;
+}
+
+.reg-details p {
+    margin: 3px 0;
+}
+
+.reg-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 5px;
 }
