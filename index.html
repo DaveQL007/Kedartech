@@ -5,69 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Masterclass - Kedar Tech Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <button class="dashboard-btn" id="dashboardToggle">
+            <i class="fas fa-chart-line"></i> View Registrations
+        </button>
+        
+        <div class="bubble" style="width: 120px; height: 120px; top: 20%; left: 10%;"></div>
+        <div class="bubble" style="width: 80px; height: 80px; top: 60%; left: 85%;"></div>
+        <div class="bubble" style="width: 60px; height: 60px; top: 30%; left: 75%;"></div>
+        
         <div class="container">
             <h1>Kedar Tech Hub</h1>
             <h2>Excel Foundations Masterclass</h2>
-            <p class="subtitle">Unlock Your Potential in Just 2 Weeks!</p>
+            <p class="subtitle">Unlock Your Potential in Just 2 Weeks! Limited slots available</p>
         </div>
     </header>
 
-    <main class="container">
-        <section class="course-highlights">
-            <div class="highlight-card floating">
-                <i class="fas fa-calendar-alt"></i>
-                <p>1-15 July 2025</p>
-            </div>
-            <div class="highlight-card floating" style="animation-delay: 0.5s;">
-                <i class="fas fa-clock"></i>
-                <p>7-8pm Daily (Online)</p>
-            </div>
-            <div class="highlight-card floating" style="animation-delay: 1s;">
-                <i class="fas fa-tag"></i>
-                <p>Only ₦20,000</p>
-            </div>
-        </section>
+    <main>
+        <div class="container">
+            <section class="course-highlights">
+                <div class="highlight-card floating">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p>1-15 July 2025</p>
+                </div>
+                <div class="highlight-card floating" style="animation-delay: 0.5s;">
+                    <i class="fas fa-clock"></i>
+                    <p>7-8pm Daily (Online)</p>
+                </div>
+                <div class="highlight-card floating" style="animation-delay: 1s;">
+                    <i class="fas fa-tag"></i>
+                    <p>Only ₦20,000</p>
+                </div>
+            </section>
 
-        <section class="benefits">
-            <h3>Why Choose Our Training?</h3>
-            <ul>
-                <li><i class="fas fa-check"></i> Certified Excel Trainer</li>
-                <li><i class="fas fa-check"></i> Hands-on exercises & real-world examples</li>
-                <li><i class="fas fa-check"></i> Small class size (max 10 students)</li>
-                <li><i class="fas fa-check"></i> 24/7 Q&A support during the course</li>
-                <li><i class="fas fa-check"></i> Practical assignments & projects</li>
-                <li><i class="fas fa-check"></i> Certificate of completion</li>
-            </ul>
-        </section>
+            <section class="benefits">
+                <h3>Why Choose Our Training?</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Certified Excel Trainer</li>
+                    <li><i class="fas fa-check"></i> Hands-on exercises & real-world examples</li>
+                    <li><i class="fas fa-check"></i> Small class size (max 10 students)</li>
+                    <li><i class="fas fa-check"></i> 24/7 Q&A support during the course</li>
+                    <li><i class="fas fa-check"></i> Practical assignments & projects</li>
+                    <li><i class="fas fa-check"></i> Certificate of completion</li>
+                </ul>
+            </section>
 
-        <section class="signup">
-            <h3>Reserve Your Spot</h3>
-            <p class="limited">Limited slots available - Sign up today!</p>
-            
-            <!-- Formspree Form -->
-            <form id="signup-form"   action="https://formspree.io/f/xblyprbw" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="name" placeholder="Enter your full name" required>
-                </div>
+            <section class="signup">
+                <h3>Reserve Your Spot</h3>
+                <p class="limited">Only 5 spots remaining - Sign up today!</p>
                 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
+                <div id="form-status" class="form-status"></div>
                 
-                <div class="form-group">
-                    <label for="whatsapp">WhatsApp Number</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="With country code (e.g. +2347012345678)" required>
-                </div>
-                
-                <button type="submit" class="btn">Submit Interest</button>
-            </form>
-        </section>
+                <!-- Formspree Form -->
+                <form id="signup-form" action="https://formspree.io/f/xblyprbw" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="name" placeholder="Enter your full name" required>
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp Number</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="With country code (e.g. +2347012345678)" required>
+                        <div class="error-message" id="whatsapp-error"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submit-btn">
+                        Submit Interest
+                    </button>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -92,6 +109,21 @@
             <h3>Thank You!</h3>
             <p>Your interest has been registered successfully.</p>
             <p>We'll contact you shortly via WhatsApp with payment details.</p>
+            <p class="copyright" style="margin-top: 20px; color: #7f8c8d;">You can close this window now</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboard" class="confirmation-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Registration Dashboard</h3>
+            <div id="registrations-container">
+                <p>Loading registrations...</p>
+            </div>
+            <button id="export-btn" class="btn">
+                <i class="fas fa-download"></i> Export to Excel
+            </button>
         </div>
     </div>
 
