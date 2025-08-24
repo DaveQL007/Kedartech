@@ -3,130 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Masterclass - Codar Tech Hub</title>
+    <title>David Ndukwe | Data Analyst</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
-        <button class="dashboard-btn" id="dashboardToggle">
-            <i class="fas fa-chart-line"></i> View Registrations
-        </button>
-        
-        <div class="bubble" style="width: 120px; height: 120px; top: 20%; left: 10%;"></div>
-        <div class="bubble" style="width: 80px; height: 80px; top: 60%; left: 85%;"></div>
-        <div class="bubble" style="width: 60px; height: 60px; top: 30%; left: 75%;"></div>
-        
         <div class="container">
-            <h1>Codar Tech Hub</h1>
-            <h2>Excel Foundations Masterclass</h2>
-            <p class="subtitle">Unlock Your Potential in Just 2 Weeks! Limited slots available</p>
+            <nav>
+                <div class="logo">David Ndukwe</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main>
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <section class="course-highlights">
-                <div class="highlight-card floating">
-                    <i class="fas fa-calendar-alt"></i>
-                    <p>1-15 July 2025</p>
-                </div>
-                <div class="highlight-card floating" style="animation-delay: 0.5s;">
-                    <i class="fas fa-clock"></i>
-                    <p>7-8pm Daily (Online)</p>
-                </div>
-                <div class="highlight-card floating" style="animation-delay: 1s;">
-                    <i class="fas fa-tag"></i>
-                    <p>Only ₦20,000</p>
-                </div>
-            </section>
-
-            <section class="benefits">
-                <h3>Why Choose Our Training?</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> Certified Excel Trainer</li>
-                    <li><i class="fas fa-check"></i> Hands-on exercises & real-world examples</li>
-                    <li><i class="fas fa-check"></i> Small class size (max 10 students)</li>
-                    <li><i class="fas fa-check"></i> 24/7 Q&A support during the course</li>
-                    <li><i class="fas fa-check"></i> Practical assignments & projects</li>
-                    <li><i class="fas fa-check"></i> Certificate of completion</li>
-                </ul>
-            </section>
-
-            <section class="signup">
-                <h3>Reserve Your Spot</h3>
-                <p class="limited">Only 5 spots remaining - Sign up today!</p>
-                
-                <div id="form-status" class="form-status"></div>
-                
-                <!-- Formspree Form -->
-                <form id="signup-form" action="https://formspree.io/f/xblyprbw" method="POST">
-                    <div class="form-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" name="name" placeholder="Enter your full name" required>
-                        <div class="error-message" id="name-error"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        <div class="error-message" id="email-error"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp Number</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="With country code (e.g. +2347012345678)" required>
-                        <div class="error-message" id="whatsapp-error"></div>
-                    </div>
-                    
-                    <button type="submit" class="btn" id="submit-btn">
-                        Submit Interest
-                    </button>
-                </form>
-            </section>
+            <div class="hero-content">
+                <h1>Data Analyst & Python Developer</h1>
+                <p>Transforming complex data into actionable insights that drive business growth and optimization.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
         </div>
-    </main>
+    </section>
 
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know my skills and expertise</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Professional Summary</h3>
+                    <p>Data Analyst with 2+ years of experience leveraging SQL, Python, and PowerBI to optimize reporting, drive revenue growth, and improve strategic decision-making across finance and technology sectors.</p>
+                    <p>Adept at translating complex data into clear, actionable strategies for non-technical stakeholders.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h4>Programming & Databases</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Pandas</span>
+                            <span class="skill-item">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Visualization</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Power BI</span>
+                            <span class="skill-item">Matplotlib</span>
+                            <span class="skill-item">Excel</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Analysis & Methods</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">A/B Testing</span>
+                            <span class="skill-item">ETL</span>
+                            <span class="skill-item">Sentiment Analysis</span>
+                            <span class="skill-item">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Asana</span>
+                            <span class="skill-item">Budget Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+                <p>My career journey and accomplishments</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Codar Tech Africa</h3>
+                        <div class="role">Data Analyst</div>
+                        <div class="date">April 2025 - Present | Lagos, Nigeria</div>
+                        <ul>
+                            <li>Developed and automated dashboards tracking key commercial targets and growth metrics, improving reporting efficiency by 25%</li>
+                            <li>Supported growth team by analyzing organic channel performance and identified a 15% efficiency gap in organic channel spending</li>
+                            <li>Collaborated on partner performance assessment project, analyzing broker partnerships and providing insights</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Remote (Aberystwyth, Wales)</h3>
+                        <div class="role">Data Analytics Tutor</div>
+                        <div class="date">November 2024 - February 2025</div>
+                        <ul>
+                            <li>Developed and delivered a comprehensive 4-month foundational curriculum on data analysis using Microsoft Excel</li>
+                            <li>Equipped the student with practical Excel skills, enabling them to build their first financial model and automate their weekly sales reports</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>National Youth Service Corps (NYSC)</h3>
+                        <div class="role">SAED ICT Training Officer</div>
+                        <div class="date">May 2024 - March 2025 | Ilejemeje, Ekiti State</div>
+                        <ul>
+                            <li>Trained over 70 corps members on various ICT tools and technologies</li>
+                            <li>Initiated tech careers for over 60% of participants through structured lessons and hands-on experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+                <p>Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Sentiment Analysis of Newspaper Articles</h3>
+                        <p>Virtual Client Project | November 2024 - February 2025</p>
+                        <ul>
+                            <li>Performed sentiment analysis on 30 newspaper articles using Python, Pandas, NLTK for sentiment, and Matplotlib for plotting</li>
+                            <li>Conducted data cleaning and text analysis to identify major patterns and visualized relationships</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Sales Dashboard in PowerBI</h3>
+                        <p>Personal Project</p>
+                        <ul>
+                            <li>Developed an interactive sales dashboard to track performance metrics and KPIs</li>
+                            <li>Implemented data modeling and visualization techniques to provide actionable insights</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Conference Planning & Management</h3>
+                        <p>Nigerian Christian Corpers Fellowship (NCCF) - Ekiti State | February 2025</p>
+                        <ul>
+                            <li>Planned and executed a large-scale conference, managing the team and reducing costs by 20% through supplier negotiations</li>
+                            <li>Increased attendee engagement by 20% through targeted marketing strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Certifications</h2>
+                <p>My academic achievements and qualifications</p>
+            </div>
+            <div class="education-content">
+                <div class="education-item">
+                    <h3>Bachelor of Engineering in Computer Engineering</h3>
+                    <p>Federal University of Technology - Akure, Ondo State</p>
+                    <span class="date">June 2023</span>
+                </div>
+                <div class="education-item">
+                    <h3>Post Graduate Diploma in Project Management</h3>
+                    <p>International College of Safety and Management (ICSMP) - Ado-Ekiti</p>
+                    <span class="date">January 2025</span>
+                </div>
+                <div class="education-item">
+                    <h3>Certified Project Management Professional (PMP®) - PMI</h3>
+                    <p>International College of Safety and Management</p>
+                    <span class="date">March 2025</span>
+                </div>
+                <div class="education-item">
+                    <h3>Certified Workflow Specialist</h3>
+                    <p>Asana Academy</p>
+                    <span class="date">March 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Get in touch for opportunities</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lagos, NG 350212</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+234 806 278 2127</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>kamadavid007@gmail.com</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/david-ndukwe-788bb91ba" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/DaveQL007" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://daviddataportfolio.my.canva.site" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <h4>Contact Us</h4>
-            <div class="contact-methods">
-                <a href="https://wa.me/2347042243130" class="contact-link">
-                    <i class="fab fa-whatsapp"></i> +234(0)-704-224-3130
-                </a>
-                <a href="mailto:kedartechhub@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> kedartechhub@gmail.com
-                </a>
-            </div>
-            <p class="copyright">© 2025 Kedar Tech Hub. All rights reserved.</p>
+            <p>&copy; 2025 David Ndukwe. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="confirmation" class="confirmation-modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <i class="fas fa-check-circle success-icon"></i>
-            <h3>Thank You!</h3>
-            <p>Your interest has been registered successfully.</p>
-            <p>We'll contact you shortly via WhatsApp with more details.</p>
-            <p class="copyright" style="margin-top: 20px; color: #7f8c8d;">You can close this window now</p>
-        </div>
-    </div>
-
-    <!-- Dashboard Modal -->
-    <div id="dashboard" class="confirmation-modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Registration Dashboard</h3>
-            <div id="registrations-container">
-                <p>Loading registrations...</p>
-            </div>
-            <button id="export-btn" class="btn">
-                <i class="fas fa-download"></i> Export to Excel
-            </button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
