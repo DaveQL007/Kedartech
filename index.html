@@ -7,37 +7,159 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Pendo Snippet Start -->
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN31SQHX3H"></script>
     <script>
-        (function(apiKey){
-            (function(p,e,n,d,o){
-                var v,w,x,y,z;
-                o = p[d] = p[d] || {};
-                o._q = [];
-                v = ['initialize','identify','updateOptions','pageLoad'];
-                for(w = 0, x = v.length; w < x; ++w)(function(m){
-                    o[m] = o[m] || function(){
-                        o._q[m === v[0] ? 'unshift' : 'push'](
-                            [m].concat([].slice.call(arguments,0)));
-                    };
-                })(v[w]);
-                y = e.createElement(n);
-                y.async = true;
-                y.src='https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
-                z = e.getElementsByTagName(n)[0];
-                z.parentNode.insertBefore(y,z);
-            })(window,document,'script','pendo');
-        })('YOUR_PENDO_API_KEY_HERE');
-
-        // Initialize Pendo
-        pendo.initialize({
-            visitor: {
-                id: 'VISITOR-UNIQUE-ID' // e.g. email or random ID
-            },
-            account: {
-                id: 'KedarTechHub' // Static or dynamic based on your setup
-            }
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MN31SQHX3H');
     </script>
-    <!-- Pendo Snippet End -->
+
+    <!-- Pendo Installation -->
+    <script>
+    (function(apiKey){
+      (function(p,e,n,d,o){
+        var v,w,x,y,z;
+        o=p[d]=p[d]||{}; o._q=o._q||[];
+        v=['initialize','identify','updateOptions','pageLoad','track'];
+        for(w=0,x=v.length;w<x;++w)(function(m){
+          o[m]=o[m]||function(){
+            o._q[m==='initialize'?'unshift':'push']([m].concat([].slice.call(arguments,0)));
+          };
+        })(v[w]);
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
+      })(window,document,'script','pendo');
+    })('90862ad6-ce52-4f46-8021-6903a1acd1f0');
+    </script>
 </head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KedarTech<span>HUB</span></div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#about">About Me</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Master Data Analytics with Professional Tutoring</h1>
+                <p>Excel, SQL, Python, Power BI, and Portfolio Building - Learn from an Industry Expert</p>
+                <a href="#booking" class="btn">Book a Session Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Tutoring Services</h2>
+                <p>Customized one-on-one sessions to help you master data analytics skills</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service Cards (Excel, SQL, Python, Power BI) -->
+                <!-- Paste the same service-card HTML from your original file here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Package Section -->
+    <section id="pricing" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Data Analyst Package</h2>
+                <p>Everything you need to launch your data analytics career</p>
+            </div>
+            <div class="packages-container">
+                <!-- Package Cards -->
+                <!-- Paste your original package-card HTML here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book a Tutoring Session</h2>
+                <p>Get started on your data analytics journey today</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-info">
+                    <!-- Booking Info Content -->
+                </div>
+                <form class="booking-form" id="bookingForm">
+                    <h3>Schedule Your Session</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" required>
+                            <option value="">Choose a service</option>
+                            <option value="excel">Microsoft Excel - #100,000/month</option>
+                            <option value="sql">SQL Database - #150,000/month</option>
+                            <option value="python">Python Programming - #200,000/month</option>
+                            <option value="powerbi">Power BI - #150,000/month</option>
+                            <option value="complete">Complete Package - #500,000/4 months</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Goals or Questions</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know your tutor</p>
+            </div>
+            <div class="about-content">
+                <!-- About content here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Footer content here -->
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
