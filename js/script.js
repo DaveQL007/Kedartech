@@ -55,25 +55,29 @@ if (bookingForm) {
         // Prepare service name for display
         let serviceName = '';
         switch(service) {
-            case 'excel':
-                serviceName = 'Microsoft Excel';
-                break;
-            case 'sql':
-                serviceName = 'SQL Database';
-                break;
-            case 'python':
-                serviceName = 'Python Programming';
-                break;
-            case 'powerbi':
-                serviceName = 'Power BI';
-                break;
-            case 'complete':
-                serviceName = 'Complete Package';
-                break;
+            case 'excel': serviceName = 'Microsoft Excel'; break;
+            case 'sql': serviceName = 'SQL Database'; break;
+            case 'python': serviceName = 'Python Programming'; break;
+            case 'powerbi': serviceName = 'Power BI'; break;
+            case 'complete': serviceName = 'Complete Package'; break;
         }
         
-        // Here you would normally send the form data to a server
-        // For this example, we'll just show an alert
+        // Initialize Pendo visitor after form submission
+        if (window.pendo) {
+            pendo.identify({
+                visitor: {
+                    id: email,         // Use email as visitor ID
+                    email: email,
+                    fullName: name
+                },
+                account: {
+                    id: 'KedarTechHub',  // Static account ID
+                    accountName: 'KedarTechHub'
+                }
+            });
+        }
+
+        // Show confirmation alert
         alert(`Thank you for your booking request, ${name}!\n\nWe have received your interest in our ${serviceName} service and will contact you at ${email} within 24 hours to confirm your session.`);
         this.reset();
     });
