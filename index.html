@@ -4,102 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KedarTechHub - Excel, SQL, Python, Power BI Tutoring</title>
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* --- Additional CSS Enhancements --- */
-        body {
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .service-card, .package-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover, .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        .booking-step {
-            display: none;
-        }
-        .booking-step.active {
-            display: block;
-        }
-        .form-error {
-            color: red;
-            font-size: 0.85em;
-        }
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff6600;
-            color: #fff;
-            padding: 12px 18px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1001;
-        }
-        .floating-cta:hover {
-            background: #ff8533;
-        }
-        .testimonial-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            gap: 20px;
-            padding: 20px 0;
-        }
-        .testimonial-card {
-            flex: 0 0 300px;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN31SQHX3H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MN31SQHX3H');
+    </script>
+
+    <!-- Pendo Integration Placeholder -->
+    <script>
+        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};v=['initialize','identify','updateOptions','pageLoad'];for(w=0;w<v.length;w++){o[v[w]]=o[v[w]]||function(){(o._q=o._q||[]).push([v[w]].concat([].slice.call(arguments,0)));};}y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/XXXXXXX/pendo.js';z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+        pendo.initialize({
+            visitor: {
+                id:              'VISITOR_UNIQUE_ID'
+            },
+            account: {
+                id:           'ACCOUNT_ID'
+            }
+        });
+    </script>
 </head>
-
-<!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MN31SQHX3H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MN31SQHX3H');
-</script>
-
-<!-- Pendo Snippet -->
-<script>
-(function(apiKey){
-    (function(p,e,n,d,o){
-        var v,w,x,y,z;
-        o=p[d]=p[d]||{};
-        o._q=o._q||[];
-        v=['initialize','identify','updateOptions','pageLoad','track'];
-        for(w=0,x=v.length;w<x;++w)(function(m){
-            o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};
-        })(v[w]);
-        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
-    })(window,document,'script','pendo');
-})('90862ad6-ce52-4f46-8021-6903a1acd1f0');
-</script>
-
 <body>
-    <!-- Floating CTA -->
-    <div class="floating-cta" id="floatingCTA">Book Now</div>
 
     <!-- Header & Navigation -->
     <header>
@@ -111,7 +45,6 @@
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#booking">Book Now</a></li>
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -128,7 +61,7 @@
             <div class="hero-content">
                 <h1>Master Data Analytics with Professional Tutoring</h1>
                 <p>Excel, SQL, Python, Power BI, and Portfolio Building - Learn from an Industry Expert</p>
-                <a href="#booking" class="btn">Book a Session Now</a>
+                <a href="#booking" class="btn btn-hero">Book a Session Now</a>
             </div>
         </div>
     </section>
@@ -141,7 +74,7 @@
                 <p>Customized one-on-one sessions to help you master data analytics skills</p>
             </div>
             <div class="services-grid">
-                <!-- Service Cards -->
+                <!-- Excel -->
                 <div class="service-card">
                     <div class="service-header">
                         <i class="fas fa-table"></i>
@@ -166,6 +99,7 @@
                     </div>
                 </div>
 
+                <!-- SQL -->
                 <div class="service-card">
                     <div class="service-header">
                         <i class="fas fa-database"></i>
@@ -190,6 +124,7 @@
                     </div>
                 </div>
 
+                <!-- Python -->
                 <div class="service-card">
                     <div class="service-header">
                         <i class="fab fa-python"></i>
@@ -214,6 +149,7 @@
                     </div>
                 </div>
 
+                <!-- Power BI -->
                 <div class="service-card">
                     <div class="service-header">
                         <i class="fas fa-chart-bar"></i>
@@ -241,7 +177,7 @@
         </div>
     </section>
 
-    <!-- Complete Package Section -->
+    <!-- Packages Section -->
     <section id="pricing" class="bg-light">
         <div class="container">
             <div class="section-title">
@@ -286,92 +222,88 @@
                 <h2>Book a Tutoring Session</h2>
                 <p>Get started on your data analytics journey today</p>
             </div>
+            <div class="booking-container">
 
-            <!-- Multi-step Booking Form -->
-            <form class="booking-form" id="bookingForm">
-                <!-- Step 1: Personal Info -->
-                <div class="booking-step step-1 active">
-                    <h3>Step 1: Your Information</h3>
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required>
-                        <div class="form-error" id="nameError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
-                        <div class="form-error" id="emailError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
-                    </div>
-                    <button type="button" class="btn" id="nextStep">Next Step</button>
+                <!-- Booking Info -->
+                <div class="booking-info">
+                    <h3>Why Choose My Tutoring?</h3>
+                    <ul>
+                        <li><i class="fas fa-graduation-cap"></i> Certified Data Analyst with 3+ years experience</li>
+                        <li><i class="fas fa-user-check"></i> Personalized 1-on-1 sessions</li>
+                        <li><i class="fas fa-laptop-code"></i> Hands-on, practical learning approach</li>
+                        <li><i class="fas fa-briefcase"></i> Portfolio building support</li>
+                        <li><i class="fas fa-clock"></i> Flexible scheduling</li>
+                        <li><i class="fas fa-globe"></i> Online sessions available worldwide</li>
+                    </ul>
                 </div>
 
-                <!-- Step 2: Service Selection -->
-                <div class="booking-step step-2">
-                    <h3>Step 2: Select Service & Date</h3>
-                    <div class="form-group">
-                        <label for="service">Select Service</label>
-                        <select id="service" required>
-                            <option value="">Choose a service</option>
-                            <option value="excel">Microsoft Excel - #100,000/month</option>
-                            <option value="sql">SQL Database - #150,000/month</option>
-                            <option value="python">Python Programming - #200,000/month</option>
-                            <option value="powerbi">Power BI - #150,000/month</option>
-                            <option value="complete">Complete Package - #500,000/4 months</option>
-                        </select>
-                        <div class="form-error" id="serviceError"></div>
+                <!-- Multi-step Booking Form -->
+                <form id="bookingForm" class="booking-form">
+                    <h3>Schedule Your Session</h3>
+                    
+                    <!-- Step Indicator -->
+                    <div class="step-indicator">
+                        <div class="step active">1</div>
+                        <div class="step">2</div>
+                        <div class="step">3</div>
                     </div>
-                    <div class="form-group">
-                        <label for="date">Preferred Date</label>
-                        <input type="date" id="date" required>
-                        <div class="form-error" id="dateError"></div>
-                    </div>
-                    <button type="button" class="btn" id="prevStep">Previous</button>
-                    <button type="button" class="btn" id="nextStep2">Next Step</button>
-                </div>
 
-                <!-- Step 3: Goals/Message -->
-                <div class="booking-step step-3">
-                    <h3>Step 3: Your Goals or Questions</h3>
-                    <div class="form-group">
-                        <label for="message">Your Goals or Questions</label>
-                        <textarea id="message"></textarea>
+                    <!-- Step 1 -->
+                    <div class="form-step form-step-active">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <button type="button" class="btn btn-next">Next</button>
                     </div>
-                    <button type="button" class="btn" id="prevStep2">Previous</button>
-                    <button type="submit" class="btn">Submit Booking Request</button>
-                </div>
-            </form>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Students Say</h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <p>"David's Excel sessions are top-notch! I was able to land my first analyst job thanks to his guidance."</p>
-                    <strong>- Jane A.</strong>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The Python tutoring is practical and engaging. I learned to handle real data projects easily."</p>
-                    <strong>- Mark D.</strong>
-                </div>
-                <div class="testimonial-card">
-                    <p>"I highly recommend KedarTechHub for anyone serious about learning SQL and analytics."</p>
-                    <strong>- Susan K.</strong>
-                </div>
+                    <!-- Step 2 -->
+                    <div class="form-step">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Select Service</label>
+                            <select id="service" required>
+                                <option value="">Choose a service</option>
+                                <option value="excel">Microsoft Excel - #100,000/month</option>
+                                <option value="sql">SQL Database - #150,000/month</option>
+                                <option value="python">Python Programming - #200,000/month</option>
+                                <option value="powerbi">Power BI - #150,000/month</option>
+                                <option value="complete">Complete Package - #500,000/4 months</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-prev">Previous</button>
+                        <button type="button" class="btn btn-next">Next</button>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="form-step">
+                        <div class="form-group">
+                            <label for="message">Your Goals or Questions</label>
+                            <textarea id="message"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-prev">Previous</button>
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-step form-step-success">
+                        <h3>Thank you!</h3>
+                        <p>Your booking request has been received. We will contact you shortly.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
@@ -380,10 +312,10 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>David Ndukwe</h3>
-                    <p>I'm a Data Analyst with 3+ years of experience specializing in data analysis, financial reporting, and project management. I am expert in SQL, Python, and Excel with proven success in optimizing growth channels and delivering actionable insights.</p>
-                    <p>My passion is helping others develop skills to succeed in the data analytics field. I've trained over 70 students and helped them launch their tech careers.</p>
+                    <p>I'm a Data Analyst with 3+ years of experience specializing in data analysis, financial reporting, and project management. I’m expert in SQL, Python, and Excel with proven success in optimizing growth channels and delivering actionable insights.</p>
+                    <p>My passion is helping others develop the skills needed to succeed in the data analytics field. I've trained over 70 students and helped them launch their tech careers.</p>
                     <div class="credentials">
-                        <h4>Credentials:</h4>
+                        <h4>My Credentials:</h4>
                         <ul>
                             <li>Bachelor of Engineering in Computer Engineering</li>
                             <li>Post Graduate Diploma in Project Management</li>
@@ -393,7 +325,9 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="immage.png" alt="profile image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -409,7 +343,7 @@
                     <ul class="footer-contact">
                         <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
                         <li><i class="fas fa-phone"></i> +234 704 224 3130</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info.kedartechhub.work.gd">info.kilatechhub.work.gd</a></li>
+                        <li><i class="fas fa-envelope"></i> info.kidatechhub.work.gz</li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -419,7 +353,6 @@
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#booking">Book Now</a></li>
                         <li><a href="#about">About Me</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -438,6 +371,7 @@
         </div>
     </footer>
 
+    <!-- Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
