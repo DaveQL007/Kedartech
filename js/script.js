@@ -1,6 +1,6 @@
-// ===============================
+// ==============================
 // Mobile Navigation Toggle
-// ===============================
+// ==============================
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -19,9 +19,9 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// ===============================
-// Smooth Scrolling for Navigation
-// ===============================
+// ==============================
+// Smooth Scrolling
+// ==============================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -37,149 +37,122 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===============================
-// Floating CTA Scroll Behavior
-// ===============================
-const floatingCTA = document.getElementById('floatingCTA');
-floatingCTA.addEventListener('click', () => {
-    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-});
-
-// ===============================
-// Multi-step Booking Form
-// ===============================
-const bookingForm = document.getElementById('bookingForm');
-const step1 = document.querySelector('.step-1');
-const step2 = document.querySelector('.step-2');
-const step3 = document.querySelector('.step-3');
-const nextStep = document.getElementById('nextStep');
-const nextStep2 = document.getElementById('nextStep2');
-const prevStep = document.getElementById('prevStep');
-const prevStep2 = document.getElementById('prevStep2');
-
-// Validation helpers
-function validateStep1() {
-    let valid = true;
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    document.getElementById('nameError').textContent = '';
-    document.getElementById('emailError').textContent = '';
-
-    if (!name.value.trim()) {
-        document.getElementById('nameError').textContent = 'Name is required';
-        valid = false;
-    }
-    if (!email.value.trim() || !email.value.includes('@')) {
-        document.getElementById('emailError').textContent = 'Valid email is required';
-        valid = false;
-    }
-    return valid;
-}
-
-function validateStep2() {
-    let valid = true;
-    const service = document.getElementById('service');
-    const date = document.getElementById('date');
-    document.getElementById('serviceError').textContent = '';
-    document.getElementById('dateError').textContent = '';
-
-    if (!service.value) {
-        document.getElementById('serviceError').textContent = 'Please select a service';
-        valid = false;
-    }
-    if (!date.value) {
-        document.getElementById('dateError').textContent = 'Please select a preferred date';
-        valid = false;
-    }
-    return valid;
-}
-
-// Step navigation
-if (nextStep) {
-    nextStep.addEventListener('click', () => {
-        if (validateStep1()) {
-            step1.classList.remove('active');
-            step2.classList.add('active');
-        }
-    });
-}
-
-if (prevStep) {
-    prevStep.addEventListener('click', () => {
-        step2.classList.remove('active');
-        step1.classList.add('active');
-    });
-}
-
-if (nextStep2) {
-    nextStep2.addEventListener('click', () => {
-        if (validateStep2()) {
-            step2.classList.remove('active');
-            step3.classList.add('active');
-        }
-    });
-}
-
-if (prevStep2) {
-    prevStep2.addEventListener('click', () => {
-        step3.classList.remove('active');
-        step2.classList.add('active');
-    });
-}
-
-// Final form submission
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Get values
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const service = document.getElementById('service').value;
-        const date = document.getElementById('date').value;
-        const message = document.getElementById('message').value.trim();
-
-        if (!validateStep1() || !validateStep2()) return;
-
-        let serviceName = '';
-        switch(service) {
-            case 'excel': serviceName = 'Microsoft Excel'; break;
-            case 'sql': serviceName = 'SQL Database'; break;
-            case 'python': serviceName = 'Python Programming'; break;
-            case 'powerbi': serviceName = 'Power BI'; break;
-            case 'complete': serviceName = 'Complete Package'; break;
-        }
-
-        alert(`Thank you, ${name}! Your booking for ${serviceName} on ${date} has been received. We will contact you at ${email} to confirm your session.`);
-        bookingForm.reset();
-        step3.classList.remove('active');
-        step1.classList.add('active');
-    });
-}
-
-// ===============================
-// Scroll-triggered Animation
-// ===============================
+// ==============================
+// Animate Elements on Scroll
+// ==============================
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.service-card, .package-card, .booking-container, .testimonial-card');
-    elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const screen = window.innerHeight / 1.2;
-        if (position < screen) {
-            el.style.opacity = 1;
-            el.style.transform = 'translateY(0)';
+    const elements = document.querySelectorAll('.service-card, .package-card, .booking-container');
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        if (elementPosition < screenPosition) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
         }
     });
 }
 
-// Initialize animations
+// Initialize animation for elements
 document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.service-card, .package-card, .booking-container, .testimonial-card');
-    elements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    const elements = document.querySelectorAll('.service-card, .package-card, .booking-container');
+    elements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
+
     setTimeout(animateOnScroll, 100);
 });
 
 window.addEventListener('scroll', animateOnScroll);
+
+// ==============================
+// Multi-Step Booking Form
+// ==============================
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+    const steps = Array.from(bookingForm.querySelectorAll('.form-step'));
+    const nextBtns = bookingForm.querySelectorAll('.btn-next');
+    const prevBtns = bookingForm.querySelectorAll('.btn-prev');
+    const stepIndicators = bookingForm.querySelectorAll('.step');
+    const successStep = bookingForm.querySelector('.form-step-success');
+
+    let currentStep = 0;
+    showStep(currentStep);
+
+    function showStep(stepIndex) {
+        steps.forEach((step, i) => {
+            step.classList.remove('form-step-active');
+            if (i === stepIndex) step.classList.add('form-step-active');
+        });
+        stepIndicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i <= stepIndex);
+        });
+    }
+
+    nextBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!validateStep(currentStep)) return;
+            currentStep++;
+            if (currentStep >= steps.length) {
+                showSuccess();
+                return;
+            }
+            showStep(currentStep);
+        });
+    });
+
+    prevBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentStep--;
+            if (currentStep < 0) currentStep = 0;
+            showStep(currentStep);
+        });
+    });
+
+    function validateStep(stepIndex) {
+        const step = steps[stepIndex];
+        const inputs = step.querySelectorAll('input, select, textarea');
+        let valid = true;
+        inputs.forEach(input => {
+            if (input.hasAttribute('required') && !input.value) {
+                input.classList.add('invalid');
+                valid = false;
+            } else {
+                input.classList.remove('invalid');
+            }
+        });
+        return valid;
+    }
+
+    function showSuccess() {
+        steps.forEach(step => step.style.display = 'none');
+        successStep.style.display = 'block';
+        successStep.style.opacity = 1;
+        bookingForm.reset();
+        currentStep = 0;
+        stepIndicators.forEach(indicator => indicator.classList.remove('active'));
+    }
+}
+
+// ==============================
+// Booking Form Submission (Optional Email Alert)
+// ==============================
+bookingForm && bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // You can integrate real email sending here using server/API
+    alert("Thank you! Your booking request has been received. We'll contact you shortly at info.kidatechhub.work");
+});
+
+// ==============================
+// Booking Form Hover Animation Fix
+// ==============================
+const bookNowButtons = document.querySelectorAll('.btn');
+bookNowButtons.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-2px)';
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translateY(0)';
+    });
+});
