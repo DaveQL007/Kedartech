@@ -21,10 +21,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({
@@ -40,19 +38,16 @@ const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form values
+
         const name = this.querySelector('#name').value;
         const email = this.querySelector('#email').value;
         const service = this.querySelector('#service').value;
-        
-        // Simple validation
+
         if (!name || !email || !service) {
             alert('Please fill in all required fields');
             return;
         }
-        
-        // Prepare service name for display
+
         let serviceName = '';
         switch(service) {
             case 'excel': serviceName = 'Microsoft Excel'; break;
@@ -61,36 +56,36 @@ if (bookingForm) {
             case 'powerbi': serviceName = 'Power BI'; break;
             case 'complete': serviceName = 'Complete Package'; break;
         }
-        
-        // Initialize Pendo visitor after form submission
+
+        alert(`Thank you for your booking request, ${name}!\n\nWe have received your interest in our ${serviceName} service and will contact you at ${email} within 24 hours.`);
+
+        // Pendo visitor tracking
         if (window.pendo) {
             pendo.identify({
                 visitor: {
-                    id: email,         // Use email as visitor ID
+                    id: email,
                     email: email,
                     fullName: name
                 },
                 account: {
-                    id: 'KedarTechHub',  // Static account ID
+                    id: 'KedarTechHub',
                     accountName: 'KedarTechHub'
                 }
             });
+        } else {
+            console.warn('Pendo is not loaded yet.');
         }
 
-        // Show confirmation alert
-        alert(`Thank you for your booking request, ${name}!\n\nWe have received your interest in our ${serviceName} service and will contact you at ${email} within 24 hours to confirm your session.`);
         this.reset();
     });
 }
 
-// Add animation on scroll
+// Animate on scroll
 function animateOnScroll() {
     const elements = document.querySelectorAll('.service-card, .package-card, .booking-container');
-    
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.3;
-        
         if (elementPosition < screenPosition) {
             element.style.opacity = 1;
             element.style.transform = 'translateY(0)';
@@ -101,14 +96,11 @@ function animateOnScroll() {
 // Initialize elements for animation
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.service-card, .package-card, .booking-container');
-    
     elements.forEach(element => {
         element.style.opacity = 0;
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
-    
-    // Trigger initial animation check
     setTimeout(animateOnScroll, 100);
 });
 
