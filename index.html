@@ -3,330 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KedarTechHub - Excel, SQL, Python, Power BI Tutoring</title>
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN31SQHX3H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-MN31SQHX3H');
-    </script>
-
-    <!-- Pendo Integration Placeholder -->
-    <script>
-        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};v=['initialize','identify','updateOptions','pageLoad'];for(w=0;w<v.length;w++){o[v[w]]=o[v[w]]||function(){(o._q=o._q||[]).push([v[w]].concat([].slice.call(arguments,0)));};}y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/XXXXXXX/pendo.js';z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-        pendo.initialize({
-            visitor: {
-                id:              'VISITOR_UNIQUE_ID'
-            },
-            account: {
-                id:           'ACCOUNT_ID'
-            }
-        });
-    </script>
+    <title>KedarTechHub - Data Analytics Tutoring</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons from Lucide (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">KedarTech<span>HUB</span></div>
-                <ul class="nav-links">
+        <div class="container nav-container">
+            <div class="logo">KedarTech<span>HUB</span></div>
+            <nav id="nav-menu">
+                <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#booking">Book Now</a></li>
-                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Master Data Analytics with Professional Tutoring</h1>
-                <p>Excel, SQL, Python, Power BI, and Portfolio Building - Learn from an Industry Expert</p>
-                <a href="#booking" class="btn btn-hero">Book a Session Now</a>
+        <div class="container hero-content">
+            <h1>Master Data Analytics with <br><span class="highlight">Professional Tutoring</span></h1>
+            <p class="hero-subtitle">Excel, SQL, Python, Power BI, and Portfolio Building. <br> Learn directly from an industry expert.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">Book a Session Now</a>
+                <button onclick="openAIPlanner()" class="btn btn-outline">
+                    <i data-lucide="sparkles" class="icon-sm"></i> AI Career Planner
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>My Tutoring Services</h2>
-                <p>Customized one-on-one sessions to help you master data analytics skills</p>
+                <p>Customized one-on-one sessions designed to help you master data skills.</p>
             </div>
-            <div class="services-grid">
+            <div class="card-grid">
                 <!-- Excel -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <i class="fas fa-table"></i>
+                <div class="card">
+                    <div class="card-header">
+                        <i data-lucide="table" class="card-icon"></i>
                         <h3>Microsoft Excel</h3>
                     </div>
-                    <div class="service-price">
-                        <span class="price-naira">#100,000</span>
-                        <span class="price-dollar">($65)</span>
-                        <span class="price-desc">/ month (2 sessions per week)</span>
+                    <div class="card-price">
+                        <span class="amount">#100,000</span>
+                        <span class="usd">($65)</span>
+                        <span class="period">/ month (2 sessions/week)</span>
                     </div>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Formulas and Functions</li>
-                            <li><i class="fas fa-check"></i> Pivot Tables and Charts</li>
-                            <li><i class="fas fa-check"></i> Data Analysis Techniques</li>
-                            <li><i class="fas fa-check"></i> Advanced Data Visualization</li>
-                            <li><i class="fas fa-check"></i> Real-world Project Exercises</li>
-                        </ul>
-                    </div>
-                    <div class="service-cta">
-                        <a href="#booking" class="btn btn-outline">Book Excel Session</a>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check-icon"></i> Formulas & Functions</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Pivot Tables & Charts</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Data Analysis</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Real-world Exercises</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#booking" class="btn btn-outline full-width">Book Session</a>
                     </div>
                 </div>
 
                 <!-- SQL -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <i class="fas fa-database"></i>
+                <div class="card">
+                    <div class="card-header">
+                        <i data-lucide="database" class="card-icon"></i>
                         <h3>SQL Database</h3>
                     </div>
-                    <div class="service-price">
-                        <span class="price-naira">#150,000</span>
-                        <span class="price-dollar">($133)</span>
-                        <span class="price-desc">/ month (2 sessions per week)</span>
+                    <div class="card-price">
+                        <span class="amount">#150,000</span>
+                        <span class="usd">($133)</span>
+                        <span class="period">/ month (2 sessions/week)</span>
                     </div>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Database Design Principles</li>
-                            <li><i class="fas fa-check"></i> Query Optimization</li>
-                            <li><i class="fas fa-check"></i> Complex Joins and Subqueries</li>
-                            <li><i class="fas fa-check"></i> Window Functions</li>
-                            <li><i class="fas fa-check"></i> Real Database Projects</li>
-                        </ul>
-                    </div>
-                    <div class="service-cta">
-                        <a href="#booking" class="btn btn-outline">Book SQL Session</a>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check-icon"></i> Database Design</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Complex Joins</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Window Functions</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Query Optimization</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#booking" class="btn btn-outline full-width">Book Session</a>
                     </div>
                 </div>
 
                 <!-- Python -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <i class="fab fa-python"></i>
-                        <h3>Python Programming</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <i data-lucide="code" class="card-icon"></i>
+                        <h3>Python</h3>
                     </div>
-                    <div class="service-price">
-                        <span class="price-naira">#200,000</span>
-                        <span class="price-dollar">($133)</span>
-                        <span class="price-desc">/ month (2 sessions per week)</span>
+                    <div class="card-price">
+                        <span class="amount">#200,000</span>
+                        <span class="usd">($133)</span>
+                        <span class="period">/ month (2 sessions/week)</span>
                     </div>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Python Basics and Syntax</li>
-                            <li><i class="fas fa-check"></i> Pandas for Data Manipulation</li>
-                            <li><i class="fas fa-check"></i> NumPy for Numerical Computing</li>
-                            <li><i class="fas fa-check"></i> Data Visualization with Matplotlib</li>
-                            <li><i class="fas fa-check"></i> Real-world Data Analysis Projects</li>
-                        </ul>
-                    </div>
-                    <div class="service-cta">
-                        <a href="#booking" class="btn btn-outline">Book Python Session</a>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check-icon"></i> Pandas & NumPy</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Data Visualization</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Data Cleaning</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Automation Scripts</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#booking" class="btn btn-outline full-width">Book Session</a>
                     </div>
                 </div>
 
                 <!-- Power BI -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <i class="fas fa-chart-bar"></i>
+                <div class="card">
+                    <div class="card-header">
+                        <i data-lucide="bar-chart" class="card-icon"></i>
                         <h3>Power BI</h3>
                     </div>
-                    <div class="service-price">
-                        <span class="price-naira">#150,000</span>
-                        <span class="price-dollar">($100)</span>
-                        <span class="price-desc">/ month (2 sessions per week)</span>
+                    <div class="card-price">
+                        <span class="amount">#150,000</span>
+                        <span class="usd">($100)</span>
+                        <span class="period">/ month (2 sessions/week)</span>
                     </div>
-                    <div class="service-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Data Modeling and DAX</li>
-                            <li><i class="fas fa-check"></i> Interactive Dashboard Creation</li>
-                            <li><i class="fas fa-check"></i> Advanced Visualization Techniques</li>
-                            <li><i class="fas fa-check"></i> Power Query for ETL</li>
-                            <li><i class="fas fa-check"></i> Real Business Intelligence Projects</li>
-                        </ul>
-                    </div>
-                    <div class="service-cta">
-                        <a href="#booking" class="btn btn-outline">Book Power BI Session</a>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check-icon"></i> DAX Formulas</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Interactive Dashboards</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Power Query ETL</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Data Modeling</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#booking" class="btn btn-outline full-width">Book Session</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section id="pricing" class="bg-light">
+    <!-- Pricing Bundle -->
+    <section id="pricing" class="section bg-light">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Complete Data Analyst Package</h2>
-                <p>Everything you need to launch your data analytics career</p>
+                <p>Everything you need to launch your career in one bundle.</p>
             </div>
-            <div class="packages-container">
-                <div class="package-card featured">
-                    <div class="package-header">
-                        <h3>Data Analyst Complete Package</h3>
-                        <p>All 4 skills + Portfolio Building</p>
-                    </div>
-                    <div class="package-price">
-                        <span class="price-naira">#500,000</span>
-                        <span class="price-dollar">($330)</span>
-                        <span class="price-desc">/ 4 months (16 weeks)</span>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> All Excel, SQL, Python, and Power BI modules</li>
-                            <li><i class="fas fa-check"></i> 2 sessions per week (32 sessions total)</li>
-                            <li><i class="fas fa-check"></i> Professional portfolio development</li>
-                            <li><i class="fas fa-check"></i> LinkedIn profile optimization</li>
-                            <li><i class="fas fa-check"></i> Resume and interview preparation</li>
-                            <li><i class="fas fa-check"></i> Real-world capstone project</li>
-                            <li><i class="fas fa-check"></i> Certificate of completion</li>
-                            <li><i class="fas fa-check"></i> 2 months of post-training support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#booking" class="btn">Enroll in Complete Package</a>
-                    </div>
+            <div class="bundle-card">
+                <div class="bundle-content">
+                    <div class="badge">BEST VALUE</div>
+                    <h3>The Full Stack Analyst</h3>
+                    <ul class="bundle-features">
+                        <li><i data-lucide="check" class="check-icon"></i> All 4 Modules Included</li>
+                        <li><i data-lucide="check" class="check-icon"></i> 32 Total Sessions</li>
+                        <li><i data-lucide="check" class="check-icon"></i> LinkedIn Optimization</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Resume Review</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Capstone Project</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Interview Prep</li>
+                    </ul>
+                </div>
+                <div class="bundle-pricing">
+                    <p class="label">Total Investment</p>
+                    <div class="price">#500,000</div>
+                    <div class="usd">($330)</div>
+                    <div class="duration">Duration: 4 months (16 weeks)</div>
+                    <a href="#booking" class="btn btn-white full-width">Enroll Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Booking Section -->
-    <section id="booking">
+    <section id="booking" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Book a Tutoring Session</h2>
-                <p>Get started on your data analytics journey today</p>
+            <div class="section-header">
+                <h2>Book a Session</h2>
+                <p>Start your journey today.</p>
             </div>
-            <div class="booking-container">
-
-                <!-- Booking Info -->
+            <div class="booking-wrapper">
                 <div class="booking-info">
-                    <h3>Why Choose My Tutoring?</h3>
-                    <ul>
-                        <li><i class="fas fa-graduation-cap"></i> Certified Data Analyst with 3+ years experience</li>
-                        <li><i class="fas fa-user-check"></i> Personalized 1-on-1 sessions</li>
-                        <li><i class="fas fa-laptop-code"></i> Hands-on, practical learning approach</li>
-                        <li><i class="fas fa-briefcase"></i> Portfolio building support</li>
-                        <li><i class="fas fa-clock"></i> Flexible scheduling</li>
-                        <li><i class="fas fa-globe"></i> Online sessions available worldwide</li>
+                    <h3>Why Choose Private Tutoring?</h3>
+                    <ul class="info-list">
+                        <li><i data-lucide="user-check"></i> Personalized 1-on-1 Sessions</li>
+                        <li><i data-lucide="laptop"></i> Hands-on Practical Learning</li>
+                        <li><i data-lucide="briefcase"></i> Portfolio Building Support</li>
+                        <li><i data-lucide="clock"></i> Flexible Weekend/Evening times</li>
+                        <li><i data-lucide="globe"></i> Online via Google Meet/Zoom</li>
                     </ul>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>"David helped me move from Admin to Data Analyst in 4 months. The SQL sessions were a game changer."</p>
+                        <div class="user">
+                            <div class="avatar">SO</div>
+                            <div class="details">
+                                <strong>Sarah O.</strong>
+                                <span>Junior Analyst, Lagos</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Multi-step Booking Form -->
-                <form id="bookingForm" class="booking-form">
-                    <h3>Schedule Your Session</h3>
-                    
-                    <!-- Step Indicator -->
-                    <div class="step-indicator">
-                        <div class="step active">1</div>
-                        <div class="step">2</div>
-                        <div class="step">3</div>
-                    </div>
-
-                    <!-- Step 1 -->
-                    <div class="form-step form-step-active">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
+                <div class="booking-form-container">
+                    <form id="bookingForm" onsubmit="handleBooking(event)">
+                        <div class="form-step active" id="step1">
+                            <h3>Your Details</h3>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="name" required placeholder="e.g. John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com">
+                            </div>
+                            <button type="button" class="btn btn-primary full-width" onclick="nextStep(2)">Next Step</button>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
+                        <div class="form-step" id="step2">
+                            <h3>Select Service</h3>
+                            <div class="form-group">
+                                <label>Interested In</label>
+                                <select id="service">
+                                    <option value="">Choose a path...</option>
+                                    <option value="excel">Excel Masterclass</option>
+                                    <option value="sql">SQL Database</option>
+                                    <option value="python">Python Programming</option>
+                                    <option value="powerbi">Power BI Dashboarding</option>
+                                    <option value="bundle">Complete Analyst Bundle</option>
+                                </select>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline" onclick="prevStep(1)">Back</button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-next">Next</button>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="form-step">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
+                        <div class="form-step" id="step3">
+                            <h3>Goals</h3>
+                            <div class="form-group">
+                                <label>What do you want to achieve?</label>
+                                <textarea id="message" placeholder="Tell me about your career goals..."></textarea>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline" onclick="prevStep(2)">Back</button>
+                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="service">Select Service</label>
-                            <select id="service" required>
-                                <option value="">Choose a service</option>
-                                <option value="excel">Microsoft Excel - #100,000/month</option>
-                                <option value="sql">SQL Database - #150,000/month</option>
-                                <option value="python">Python Programming - #200,000/month</option>
-                                <option value="powerbi">Power BI - #150,000/month</option>
-                                <option value="complete">Complete Package - #500,000/4 months</option>
-                            </select>
+                        <div class="form-step success" id="successStep">
+                            <div class="success-icon"><i data-lucide="check"></i></div>
+                            <h3>Booking Received!</h3>
+                            <p>Thanks! David will contact you shortly.</p>
+                            <button type="button" class="btn-link" onclick="resetForm()">Book another session</button>
                         </div>
-                        <button type="button" class="btn btn-prev">Previous</button>
-                        <button type="button" class="btn btn-next">Next</button>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="form-step">
-                        <div class="form-group">
-                            <label for="message">Your Goals or Questions</label>
-                            <textarea id="message"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-prev">Previous</button>
-                        <button type="submit" class="btn">Submit</button>
-                    </div>
-
-                    <!-- Success Message -->
-                    <div class="form-step form-step-success">
-                        <h3>Thank you!</h3>
-                        <p>Your booking request has been received. We will contact you shortly.</p>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-light">
+    <section id="about" class="section bg-light">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Get to know your tutor</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>David Ndukwe</h3>
-                    <p>I'm a Data Analyst with 3+ years of experience specializing in data analysis, financial reporting, and project management. I’m expert in SQL, Python, and Excel with proven success in optimizing growth channels and delivering actionable insights.</p>
-                    <p>My passion is helping others develop the skills needed to succeed in the data analytics field. I've trained over 70 students and helped them launch their tech careers.</p>
-                    <div class="credentials">
-                        <h4>My Credentials:</h4>
-                        <ul>
-                            <li>Bachelor of Engineering in Computer Engineering</li>
-                            <li>Post Graduate Diploma in Project Management</li>
-                            <li>Certified Project Management Professional (PMP)</li>
-                            <li>Certified Workflow Specialist - Asana Academy</li>
-                        </ul>
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <div class="avatar-large">
+                        <i data-lucide="user"></i>
+                        <div class="badge-cert">
+                            <i data-lucide="check"></i> Certified Expert
+                        </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user-tie"></i>
+                <div class="about-text">
+                    <h2>Meet Your Tutor</h2>
+                    <h3>David Ndukwe <span class="tag">Lead Tutor</span></h3>
+                    <p>I'm a Data Analyst with 3+ years of experience specializing in financial reporting and project management. I am an expert in SQL, Python, and Excel with proven success in delivering actionable insights.</p>
+                    <div class="credentials">
+                        <div class="cred-item"><i data-lucide="graduation-cap"></i> B.Eng Computer Engineering</div>
+                        <div class="cred-item"><i data-lucide="briefcase"></i> PMP Certified Manager</div>
+                        <div class="cred-item"><i data-lucide="check"></i> Google Data Analytics Cert</div>
                     </div>
                 </div>
             </div>
@@ -335,43 +286,87 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>KedarTechHub</h3>
-                    <p>Professional data analytics tutoring services in Excel, SQL, Python, and Power BI.</p>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
-                        <li><i class="fas fa-phone"></i> +234 704 224 3130</li>
-                        <li><i class="fas fa-envelope"></i> info.kedartechhub.work.gz</li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#booking">Book Now</a></li>
-                        <li><a href="#about">About Me</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h3>Follow Me</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+        <div class="container footer-grid">
+            <div>
+                <h3>KedarTechHUB</h3>
+                <p>Professional data analytics tutoring services helping you master Excel, SQL, Python, and Power BI.</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul class="contact-list">
+                    <li><i data-lucide="map-pin"></i> Lagos, Nigeria</li>
+                    <li><i data-lucide="phone"></i> +234 704 224 3130</li>
+                    <li><i data-lucide="mail"></i> info.kedartechhub.work.gz</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://wa.me/2347042243130" class="social-btn whatsapp"><i data-lucide="message-circle"></i></a>
+                    <a href="https://ng.linkedin.com/in/david-the-analyst" class="social-btn linkedin"><i data-lucide="linkedin"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 KedarTechHub. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 KedarTechHub. All rights reserved.
         </div>
     </footer>
 
-    <!-- Script -->
-    <script src="js/script.js"></script>
+    <!-- AI Chat Widget -->
+    <div id="ai-widget">
+        <div id="chat-window" class="chat-window hidden">
+            <div class="chat-header">
+                <div class="header-title">
+                    <i data-lucide="bot"></i> KedarTech AI
+                </div>
+                <div class="header-controls">
+                    <button onclick="toggleVoice()" id="voiceBtn"><i data-lucide="volume-x"></i></button>
+                    <button onclick="toggleChat()"><i data-lucide="minimize-2"></i></button>
+                </div>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="msg bot">
+                    <div class="bubble">Hi! I'm David's AI Assistant. Ask me about pricing, the curriculum, or how to switch careers!</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="Ask AI..." onkeypress="handleEnter(event)">
+                    <button onclick="startDictation()" class="mic-btn"><i data-lucide="mic"></i></button>
+                </div>
+                <button onclick="sendMessage()" class="send-btn"><i data-lucide="send"></i></button>
+            </div>
+        </div>
+        <button id="chat-toggle" onclick="toggleChat()">
+            <i data-lucide="message-square"></i>
+        </button>
+    </div>
+
+    <!-- Career Planner Modal -->
+    <div id="planner-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i data-lucide="sparkles"></i> AI Career Roadmap</h3>
+                <button onclick="closeAIPlanner()"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="planner-form">
+                    <p>Enter your current role to generate a transition plan.</p>
+                    <input type="text" id="currentRole" placeholder="e.g. Accountant">
+                    <button onclick="generateRoadmap()" class="btn btn-gradient full-width">Generate Plan</button>
+                </div>
+                <div id="planner-result" class="hidden">
+                    <div id="roadmap-text"></div>
+                    <button onclick="resetPlanner()" class="btn btn-outline full-width">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
