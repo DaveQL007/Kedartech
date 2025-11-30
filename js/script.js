@@ -1,5 +1,5 @@
 // --- CONFIGURATION ---
-const API_KEY = ""; // PASTE YOUR GEMINI API KEY HERE
+const API_KEY = "AIzaSyCLz14SSwE1BKF8aniT8M6bmxw9h3LKoGI"; // PASTE YOUR GEMINI API KEY HERE
 const SYSTEM_PROMPT = `
 You are the AI assistant for KedarTechHub, a premium data analytics tutoring service run by David Ndukwe.
 Tone: Professional, encouraging.
