@@ -92,11 +92,30 @@ nav a { text-decoration: none; color: var(--text); font-weight: 600; }
 
 /* About */
 .about-wrapper { display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; justify-content: center; }
-.avatar-large { width: 200px; height: 200px; background: linear-gradient(135deg, var(--primary), #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; position: relative; }
-/* Added: Ensure image fills the circle correctly */
-.avatar-large img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.avatar-large { 
+    width: 200px; 
+    height: 200px; 
+    background: linear-gradient(135deg, var(--primary), #6366f1); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    position: relative;
+    /* Added to ensure the zoomed image stays inside the circle */
+    overflow: hidden; 
+}
+.avatar-large img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    /* Centers horizontally, focuses 20% from the top vertically (where faces usually are) */
+    object-position: center 20%; 
+    /* Zooms in by 60% to crop out body/background */
+    transform: scale(1.6); 
+}
 .avatar-large i { width: 100px; height: 100px; }
-.badge-cert { position: absolute; bottom: 0; right: 0; background: white; color: var(--dark); padding: 0.5rem 1rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.25rem; }
+.badge-cert { position: absolute; bottom: 0; right: 0; background: white; color: var(--dark); padding: 0.5rem 1rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.25rem; z-index: 10; }
 .credentials { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
 .cred-item { background: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); }
 
