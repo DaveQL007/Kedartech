@@ -102,21 +102,32 @@ nav a { text-decoration: none; color: var(--text); font-weight: 600; }
     justify-content: center; 
     color: white; 
     position: relative;
-    /* Added to ensure the zoomed image stays inside the circle */
     overflow: hidden; 
 }
 .avatar-large img { 
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    /* Centers horizontally, focuses on top-center to capture the head */
     object-position: top center; 
-    /* Zooms in by 1.5x and sets origin to top-center to keep the head in view */
     transform: scale(1.5); 
     transform-origin: top center;
 }
 .avatar-large i { width: 100px; height: 100px; }
-.badge-cert { position: absolute; bottom: 0; right: 0; background: white; color: var(--dark); padding: 0.5rem 1rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.25rem; z-index: 10; }
+/* Updated: Moved below image */
+.badge-cert {
+    background: white;
+    color: var(--dark);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    z-index: 10;
+    margin-top: 1rem; /* Added margin to separate from image */
+}
 .credentials { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
 .cred-item { background: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); }
 
